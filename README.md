@@ -12,6 +12,7 @@ git clone https://github.com/DealerDotCom/grinder-groovy.git
 maven install
 
 Usage
+-----
 
 import net.grinder.script.Grinder.grinder
 def log(msg:String) = {
@@ -25,6 +26,8 @@ def log(msg:String) = {
 }
 
 Example of pom.xml
+------------------
+
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"

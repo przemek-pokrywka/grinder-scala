@@ -20,16 +20,16 @@ class ScalaScriptEngine(script:ScriptLocation) extends ScriptEngine  {
   val eval = new Eval()
 
   val factory = try {
-                  eval.apply[(()=>()=>Unit)](script.getFile)
+                  eval.apply[(()=>()=>Unit)](script.getFile)()
                 }catch {
-                   case io: IOException => throw new EngineException("Unable to parse groovy script at: " +
+                   case io: IOException => throw new EngineException("Unable to parse scala script at: " +
                      script.getFile().getAbsolutePath(), io)
                    case cc: ClassCastException => throw new EngineException("File doesn't contains factory method")
                 }
   @throws(classOf[EngineException])
   def createWorkerRunnable(): WorkerRunnable = {
     try {
-      new ScalaWorkerRunnable(factory())
+      new ScalaWorkerRunnable(factory)
     }catch {
       case e => throw new EngineException("Cannot create runner.", e )
     }

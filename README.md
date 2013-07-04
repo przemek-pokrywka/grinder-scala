@@ -31,15 +31,17 @@ If you have existing project add maven dependency only.
 import net.grinder.script.{Grinder, Test}
 
 () => {
+    def log(msg:String) = {
+      println(msg)
+    }
+    
     //process level
     log("start process %s" format Grinder.grinder.getProcessNumber)
     
     //create The Grinder's test
     val test = new Test(1, "test log")
     
-    def log(msg:String) = {
-      println(msg)
-    }
+    
     
   () => {
     //thread level

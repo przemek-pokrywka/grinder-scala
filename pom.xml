@@ -51,7 +51,14 @@
             <version>2.0.M6-SNAP3</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>net.sf.grinder</groupId>
+            <artifactId>grinder-test-support</artifactId>
+            <version>${grinder.version}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
+
 
     <build>
         <sourceDirectory>src/main/scala</sourceDirectory>
